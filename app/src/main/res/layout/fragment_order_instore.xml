@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/toolbar_icon"
+            android:layout_height="@dimen/toolbar_icon"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/backarrow"/>
+
+        <TextView
+            android:text="Đặt hàng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHeaderStoreDetail"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:gravity="left"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/second_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_dark_black">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/container_detail_store"
+                android:background="@android:color/transparent">
+
+                <include layout="@layout/view_food_instore"/>
+                <include layout="@layout/selected_food_info" />
+                <include layout="@layout/view_morefood"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/store_detail_toolbar"
+            >
+
+            <ImageButton
+                android:layout_weight="1"
+                android:layout_height="@dimen/toolbar_icon"
+                android:id="@+id/btn_cmt"
+                android:layout_width="40dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/message_icon_text"
+                android:background="@color/transparent"
+                android:scaleType="centerInside"
+                android:layout_marginTop="3dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <ImageButton
+                android:layout_weight="1"
+                android:layout_width="40dp"
+                android:layout_height="@dimen/toolbar_icon"
+                android:src="@drawable/save_icon_text"
+                android:id="@+id/btn_save_diaDiem"
+                android:background="@color/transparent"
+                android:layout_marginLeft="10dp"
+                android:scaleType="centerInside"
+                android:layout_marginTop="3dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="@dimen/toolbar_icon"
+                android:src="@drawable/share_icon_text"
+                android:id="@+id/imageView3"
+                android:layout_weight="1"
+                android:layout_marginTop="3dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

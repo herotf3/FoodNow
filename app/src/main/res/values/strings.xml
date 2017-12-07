@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FoodNow</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_new_title">Mới nhất</string>
+    <string name="home_catalog_title">Danh mục</string>
+    <string name="home_zone_title">Khu vực</string>
+    <string name="openning">Đang mở cửa</string>
+    <string name="an_gi">Ăn gì</string>
+    <string name="bo_suu_tap">Bộ sưu tập</string>
+    <string name="gan_toi">Gần tôi</string>
+    <string name="shippcost">Phí giao hàng:</string>
+    <string name="available">Còn món</string>
+    <string name="sologan">Food now, Eat now, Feel now</string>
+</resources>

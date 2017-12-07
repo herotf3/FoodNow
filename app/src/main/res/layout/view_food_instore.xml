@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_black">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+        <ImageView
+            android:id="@+id/order_food_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/noodle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:background="@color/darker_layer"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/main_info_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:text="Phở Gà"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_food_name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/available_status"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="end"
+                android:background="@drawable/circle_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_food_cost"
+                android:text="30.000đ"
+                android:textColor="@android:color/white"
+                android:gravity="right"
+                android:layout_marginEnd="15dp"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:text="9.4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/store_point"
+            android:background="@drawable/circle_green"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff" />
+
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#fff"
+        android:padding="8dp"
+        android:weightSum="6">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_store"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/right_arrow"
+            android:scaleType="fitCenter"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center_horizontal"
+            android:text="Vị Hương Quán"
+            android:textColor="@color/color_text_orange"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="5dp"
+            android:text="414 Dương Bá Trạc, q8, tp HCM"
+            android:textColor="@color/black_transparent"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:id="@+id/store_distance"
+            android:gravity="end"
+            android:layout_marginRight="5dp"
+            android:text="4.5km"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/gps"
+            android:scaleType="fitXY"
+            android:layout_marginTop="2dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shippcost"
+            android:layout_marginRight="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shipping_cost"
+            android:text="3.000đ"
+            android:textStyle="bold"
+            android:textColor="@color/color_text_orange"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/color_text_orange"/>
+    <size android:height="15dp"
+        android:width="15dp"/>
+    <stroke
+        android:color="#c6fdd0a5"
+        android:dashGap="1dp"
+        android:dashWidth="7dp"
+        android:width="3px"
+        />
+
+</shape>

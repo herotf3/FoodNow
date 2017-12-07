@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--tool bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginTop="10dp">
+        <ImageButton
+            android:id="@+id/btn_backto_login"
+            android:layout_width="@dimen/toolbar_icon"
+            android:layout_height="@dimen/toolbar_icon"
+            android:src="@drawable/icon_back"
+            android:scaleType="centerInside"
+            android:background="@color/transparent"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"></View>
+        <ImageButton
+            android:id="@+id/btn_acc_info"
+            android:layout_width="@dimen/toolbar_icon"
+            android:layout_height="@dimen/toolbar_icon"
+            android:src="@drawable/icon_account_en"
+            android:background="@color/transparent"
+            android:scaleType="centerInside"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"/>
+    </LinearLayout>
+    <!--Logo + sologan -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_foodnow"
+        android:scaleType="fitCenter"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sologan"
+        android:typeface="sans"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textSize="@dimen/sologan"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        >
+
+        <EditText
+            android:id="@+id/search_box"
+            android:layout_width="@dimen/search_box"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:hint="  Ăn gì đây?"
+            android:textColorHighlight="@color/color_text_orange" />
+        <SearchView
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_toRightOf="@+id/search_box">
+        </SearchView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <!-- Thức ăn -->
+        <FrameLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/search_img_food"
+                android:layout_width="135dp"
+                android:layout_height="130dp"
+                android:clickable="true"
+                android:src="@drawable/food_img"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:text="Món ăn"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:gravity="center_horizontal"
+                android:textColor="#fff"
+                android:background="@color/darker_layer"
+                />
+
+        </FrameLayout>
+        <!-- Thức uống -->
+        <FrameLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+
+            >
+            <ImageView
+                android:id="@+id/search_img_beverage"
+                android:layout_width="135dp"
+                android:layout_height="130dp"
+                android:src="@drawable/beverage_category"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:text="Thức uống"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:gravity="center_horizontal"
+                android:textColor="#fff"
+                android:background="@color/darker_layer"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:src="@drawable/banner"
+        android:paddingTop="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+
+</LinearLayout>
