@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.asus.foodnow.Fragment.SearchAndPick.FragmentListFood;
 import com.example.asus.foodnow.Fragment.SearchAndPick.FragmentOrder;
 import com.example.asus.foodnow.Fragment.LoginScreen.FragmentTabLogin;
 
@@ -16,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState==null){
             FragmentTabLogin frLogin=new FragmentTabLogin();
             FragmentOrder frOrder=new FragmentOrder();
-            setFragment(frLogin);
+            FragmentListFood frListFood=new FragmentListFood();
+            setFragment(frListFood);
         }
     }
     void setFragment(Fragment fragment){

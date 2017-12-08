@@ -13,4 +13,7 @@
     <string name="shippcost">Phí giao hàng:</string>
     <string name="available">Còn món</string>
     <string name="sologan">Food now, Eat now, Feel now</string>
+    <string name="danh_muc">Danh mục</string>
+    <string name="xem_hinh">Xem nào!</string>
+    <string name="order_now">Đặt món</string>
 </resources>
