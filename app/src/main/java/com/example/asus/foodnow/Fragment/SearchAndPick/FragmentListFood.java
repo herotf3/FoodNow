@@ -28,7 +28,7 @@ public class FragmentListFood extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        root=inflater.inflate(R.layout.item_a_food,null);
+        root=inflater.inflate(R.layout.fragment_list_food,null);
         InitView();
         //AddListener();
         return root;
