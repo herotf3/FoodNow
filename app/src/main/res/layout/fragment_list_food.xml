@@ -21,6 +21,7 @@
             android:background="@color/transparent"
             />
         <TextView
+            android:id="@+id/tv_food_or_drink"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
@@ -43,7 +44,11 @@
         <ImageButton
             android:id="@+id/btn_catalog"
             android:layout_width="@dimen/toolbar_icon"
-            android:layout_height="@dimen/toolbar_icon" />
+            android:layout_height="@dimen/toolbar_icon"
+            android:src="@drawable/icon_catalog_en"
+            android:scaleType="centerInside"
+            android:background="@color/transparent"
+            android:layout_marginEnd="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,12 +56,19 @@
 
             />
         <Spinner
+            android:id="@+id/list_food_catalog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/toolbar_icon"
             android:gravity="center">
 
         </Spinner>
-
     </LinearLayout>
+    <!-- end line danh muc-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>

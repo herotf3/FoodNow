@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
+import com.example.asus.foodnow.Adapter.OnOrderSelect;
+import com.example.asus.foodnow.Model.Food;
 import com.example.asus.foodnow.R;
 import com.example.asus.foodnow.UICustomView.ImageExpanable;
 
@@ -18,7 +20,7 @@ import com.example.asus.foodnow.UICustomView.ImageExpanable;
  * Created by ASUS on 12/7/2017.
  */
 
-public class FragmentListFood extends Fragment{
+public class FragmentListFood extends Fragment implements OnOrderSelect {
     View root;
     ImageExpanable imgFood;
     boolean zoom=false;
@@ -43,5 +45,9 @@ public class FragmentListFood extends Fragment{
     }
 
 
+    @Override
+    public void onOrderFoodCallback(Food food) {
+
+    }
 }
 
