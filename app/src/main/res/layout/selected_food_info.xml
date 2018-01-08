@@ -14,24 +14,26 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
 
-        android:background="@color/first_orange_color"
         android:gravity="center_vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bạn đã chọn:"
+            android:text="Bạn đã chọn"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
-            android:textColor="#fff"
+            android:layout_marginEnd="15dp"
+            android:textColor="#000"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/selected_foodname"
             android:text="PHỞ GÀ"
             android:paddingLeft="20dp"
             android:textColor="#fff"
-            android:textStyle="bold"/>
+            android:background="@drawable/hcn_orang"
+            android:textStyle="bold"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -39,7 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
-        android:paddingTop="8dp">
+        android:paddingTop="8dp"
+        android:weightSum="10">
 
         <TextView
             android:text="Số lượng:"
@@ -56,22 +59,43 @@
             android:layout_height="wrap_content"
             android:id="@+id/selected_count"
             android:layout_weight="1"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center_vertical|start"
             android:paddingLeft="8dp"
             android:textSize="16sp"
-            android:textColor="@color/second_color"/>
-        <ImageButton
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:id="@+id/selected_add"
-            android:src="@android:drawable/arrow_up_float"
-            android:layout_marginEnd="15dp"/>
-        <ImageButton
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:id="@+id/selected_sub"
-            android:src="@android:drawable/arrow_down_float"
-            android:layout_marginEnd="15dp"/>
+            android:textColor="@color/black_transparent"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/selected_add"
+                android:src="@android:drawable/arrow_up_float"
+                android:layout_marginEnd="15dp"/>
+            <ImageButton
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/selected_sub"
+                android:src="@android:drawable/arrow_down_float"
+                android:layout_marginEnd="15dp"/>
+
+        </LinearLayout>
+        <!-- Giá -->
+        <TextView
+            android:id="@+id/subcost"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+
+            android:paddingLeft="8dp"
+            android:text="30.000đ"
+            android:textSize="16sp"
+            android:textColor="@color/second_color"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -81,29 +105,10 @@
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
         android:layout_marginTop="8dp"
-        android:gravity="center_vertical"
+        android:gravity="center"
         >
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:srcCompat="@drawable/icon_cost"
-            android:id="@+id/icon_cost"
-            android:scaleType="fitXY"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="10dp" />
 
-        <TextView
-            android:id="@+id/subcost"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-
-            android:paddingLeft="8dp"
-            android:text="30.000đ"
-            android:textSize="16sp"
-            android:textColor="@color/second_color"
-            android:textStyle="bold"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="25dp"

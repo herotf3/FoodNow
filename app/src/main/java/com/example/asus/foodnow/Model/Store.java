@@ -5,8 +5,24 @@ package com.example.asus.foodnow.Model;
  */
 
 public class Store {
-    String id,name,address,point;
+    String id,name,address,point,distance;
+
     Double shipCost;
+
+    public Store(String id, String name, String address, String distance) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.distance = distance;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
 
     public String getId() {
         return id;

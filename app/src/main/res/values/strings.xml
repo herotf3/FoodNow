@@ -16,4 +16,13 @@
     <string name="danh_muc">Danh mục</string>
     <string name="xem_hinh">Xem nào!</string>
     <string name="order_now">Đặt món</string>
+    <string name="btn_view_cart">Xem giỏ hàng</string>
+    <string name="btn_purchase">Thanh toán</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="your_cart">Giỏ hàng của bạn</string>
 </resources>

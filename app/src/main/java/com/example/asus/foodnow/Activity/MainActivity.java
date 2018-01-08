@@ -1,12 +1,14 @@
-package com.example.asus.foodnow;
+package com.example.asus.foodnow.Activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.asus.foodnow.Fragment.SearchAndPick.FragmentListFood;
+import com.example.asus.foodnow.Fragment.SearchAndPick.FragmentMainSearch;
 import com.example.asus.foodnow.Fragment.SearchAndPick.FragmentOrder;
 import com.example.asus.foodnow.Fragment.LoginScreen.FragmentTabLogin;
+import com.example.asus.foodnow.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
             FragmentTabLogin frLogin=new FragmentTabLogin();
             FragmentOrder frOrder=new FragmentOrder();
             FragmentListFood frListFood=new FragmentListFood();
-            setFragment(frListFood);
+            setFragment(frLogin);
+
         }
     }
     void setFragment(Fragment fragment){

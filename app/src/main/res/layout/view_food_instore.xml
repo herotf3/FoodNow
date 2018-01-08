@@ -7,12 +7,12 @@
     android:background="@color/background_dark_black">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         >
         <ImageView
             android:id="@+id/order_food_image"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/noodle" />
 
@@ -98,7 +98,7 @@
             android:layout_gravity="right"
             android:gravity="center_horizontal"
             android:text="Vị Hương Quán"
-            android:textColor="@color/color_text_orange"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
             />
 

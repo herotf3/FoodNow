@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
+    android:layout_width="270dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp">
@@ -16,13 +16,15 @@
         android:textColor="@android:color/white" />
 
     <EditText
-        android:id="@+id/login_username"
+        android:id="@+id/signin_email"
         style="@style/MyLoginEditext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableBottom="@color/background_dark_black"
         android:ems="10"
-        android:hint="nhập tài khoản"
+        android:hint="email"
+        android:textColorHint="@color/lighter_gray"
+        android:inputType="textEmailAddress"
         android:scrollbarThumbHorizontal="@drawable/text_selected_myhandle"
         android:scrollbarThumbVertical="@drawable/text_selected_myhandle"
         android:textColor="@color/edit_text_login"
@@ -39,13 +41,14 @@
         />
 
     <EditText
-        android:id="@+id/login_password"
+        android:id="@+id/signin_pass"
         style="@style/MyLoginEditext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableBottom="@color/background_dark_black"
         android:ems="10"
-        android:hint="password here"
+        android:hint="*****"
+        android:textColorHint="@color/lighter_gray"
         android:inputType="textPassword"
         android:scrollbarAlwaysDrawHorizontalTrack="false"
         android:scrollbarThumbHorizontal="@drawable/text_selected_myhandle"

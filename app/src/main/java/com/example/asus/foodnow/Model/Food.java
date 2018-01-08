@@ -1,67 +1,70 @@
 package com.example.asus.foodnow.Model;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-
-import com.example.asus.foodnow.R;
-
 /**
- * Created by ASUS on 12/6/2017.
+ * Created by ASUS on 1/5/2018.
  */
 
 public class Food {
-    String id;
-    String name, point;
-    Double cost;
-    Drawable img;
-    Store store;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String Name, Image, Description, Price, Discount, MenuId;
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
-    public String getPoint() {
-        return point;
+    public String getImage() {
+        return Image;
     }
 
-    public void setPoint(String point) {
-        this.point = point;
+    public void setImage(String image) {
+        Image = image;
     }
 
-    public Double getCost() {
-        return cost;
+    public String getDescription() {
+        return Description;
     }
 
-    public void setCost(Double cost) {
-        this.cost = cost;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public Drawable getImg() {
-        return img;
+    public String getPrice() {
+        return Price;
     }
 
-    public void setImg(Drawable img) {
-        this.img = img;
+    public void setPrice(String price) {
+        Price = price;
     }
 
-    public Store getStore() {
-        return store;
+    public String getDiscount() {
+        return Discount;
     }
 
-    public void setStore(Store store) {
-        this.store = store;
+    public void setDiscount(String discount) {
+        Discount = discount;
+    }
+
+    public String getMenuId() {
+        return MenuId;
+    }
+
+    public void setMenuId(String menuId) {
+        MenuId = menuId;
+    }
+
+    public Food() {
+
+    }
+
+    public Food(String name, String image, String description, String price, String discount, String menuId) {
+        Name = name;
+        Image = image;
+        Description = description;
+        Price = price;
+        Discount = discount;
+        MenuId = menuId;
     }
 }

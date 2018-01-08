@@ -6,8 +6,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.asus.foodnow.Model.Food;
-import com.example.asus.foodnow.Model.Store;
+import com.example.asus.foodnow.Interface.OnOrderSelect;
+import com.example.asus.foodnow.Model.Product;
 import com.example.asus.foodnow.R;
 
 /**
@@ -28,16 +28,16 @@ class FoodViewHD extends RecyclerView.ViewHolder{
     public FoodViewHD(View itemView, OnOrderSelect onOrderSelect) {
         super(itemView);
         tv_food=(TextView)itemView.findViewById(R.id.txt_list_food_name);
-        tv_store=(TextView)itemView.findViewById(R.id.txt_list_store);
-        tv_cost=(TextView)itemView.findViewById(R.id.tv_list_cost);
-        tv_point=(TextView)itemView.findViewById(R.id.txt_mark);
+        tv_store=(TextView)itemView.findViewById(R.id.txt_food_store);
+
+
         imgFood=(ImageView)itemView.findViewById(R.id.list_img_food);
         this.onOrderSelect = onOrderSelect;
     }
 
-    public void setData(final Food food){
+    public void setData(final Product food){
         tv_food.setText(food.getName());
-        tv_store.setText(food.getStore().getName());
+        tv_store.setText(food.getSupllier().getName());
         tv_cost.setText(String.valueOf(food.getCost()));
         tv_point.setText(food.getPoint());
         imgFood.setImageDrawable(food.getImg());

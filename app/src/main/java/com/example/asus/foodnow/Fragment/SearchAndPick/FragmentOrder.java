@@ -8,11 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.asus.foodnow.Model.DiaDiem;
+import com.example.asus.foodnow.Model.Store;
 import com.example.asus.foodnow.R;
 
 /**
@@ -22,10 +23,11 @@ import com.example.asus.foodnow.R;
 public class FragmentOrder extends Fragment{
     View rootView;
     TextView tvHeaderStore;
-    ImageButton btnAddtoCart,btnCmt,btnSave,btnBack;
+    ImageButton btnCmt,btnSave,btnBack;
+    Button btn2Cart, btn2Purchase;
     ImageView imageFood;
     TextView address,info,costRange;
-    DiaDiem thisDiaDiem;
+    Store store;
 
 
     @Nullable
@@ -39,13 +41,12 @@ public class FragmentOrder extends Fragment{
     }
 
     private void setData() {
-        thisDiaDiem=(DiaDiem)this.getArguments().getSerializable("diaDiemDuocChon");
+        store=(Store) this.getArguments().getSerializable("diaDiemDuocChon");
         //if (imageFood!=null)
         //    new DownloadHinhTask(imageFood).execute(thisDiaDiem.getUrlImage());
-        tvHeaderStore.setText(thisDiaDiem.getTen());
-        address.setText(thisDiaDiem.getDiaChi());
-        info.setText(thisDiaDiem.getDanhMuc().getTen());
-        costRange.setText(thisDiaDiem.getGiaTien());
+        tvHeaderStore.setText(store.getName());
+        address.setText(store.getAddress());
+
         //collection
 
 
@@ -57,7 +58,8 @@ public class FragmentOrder extends Fragment{
         btnCmt=(ImageButton) rootView.findViewById(R.id.btn_cmt);
         btnSave=(ImageButton) rootView.findViewById(R.id.btn_save_diaDiem);
         imageFood = (ImageView) rootView.findViewById(R.id.order_food_image);
-
+        btn2Cart=(Button)rootView.findViewById(R.id.btn_view_cart);
+        btn2Purchase=(Button)rootView.findViewById(R.id.btn_purchase);
 
     }
 
