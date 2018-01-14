@@ -6,6 +6,15 @@ package com.example.asus.foodnow.Model;
 
 public class Food {
     private String Name, Image, Description, Price, Discount, MenuId;
+    private String supplierId;
+
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
+    }
 
     public String getName() {
         return Name;

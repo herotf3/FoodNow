@@ -16,15 +16,15 @@ public class Product {
     public static final int TYPE_FOOD=1;
     public static final int TYPE_BEVR=2;
 
-    public Store getSupllier() {
+    public Supplier getSupllier() {
         return supllier;
     }
 
-    public void setSupllier(Store supllier) {
+    public void setSupllier(Supplier supllier) {
         this.supllier = supllier;
     }
 
-    Store supllier;
+    Supplier supllier;
 
 
 

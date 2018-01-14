@@ -3,8 +3,6 @@ package com.example.asus.foodnow.Fragment.SearchAndPick;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.asus.foodnow.Model.Store;
+import com.example.asus.foodnow.Model.Supplier;
 import com.example.asus.foodnow.R;
 
 /**
@@ -27,7 +25,7 @@ public class FragmentOrder extends Fragment{
     Button btn2Cart, btn2Purchase;
     ImageView imageFood;
     TextView address,info,costRange;
-    Store store;
+    Supplier store;
 
 
     @Nullable
@@ -41,7 +39,7 @@ public class FragmentOrder extends Fragment{
     }
 
     private void setData() {
-        store=(Store) this.getArguments().getSerializable("diaDiemDuocChon");
+        store=(Supplier) this.getArguments().getSerializable("diaDiemDuocChon");
         //if (imageFood!=null)
         //    new DownloadHinhTask(imageFood).execute(thisDiaDiem.getUrlImage());
         tvHeaderStore.setText(store.getName());

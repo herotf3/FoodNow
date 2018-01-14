@@ -9,7 +9,14 @@ import android.widget.Toast;
 
 import com.example.asus.foodnow.Interface.ItemClickListener;
 import com.example.asus.foodnow.Model.Food;
+import com.example.asus.foodnow.Model.Supplier;
 import com.example.asus.foodnow.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -17,8 +24,9 @@ import com.squareup.picasso.Picasso;
  */
 
 public class FoodVH extends RecyclerView.ViewHolder implements View.OnClickListener{
-    TextView tvFoodName,tvCost,tvStore,tvAddrStore;
-    ImageView imgFood,statusLight;
+    private  TextView tvFoodName,tvCost,tvStore,tvAddrStore;
+    private ImageView imgFood,statusLight;
+    private Supplier supplier;
 
 
     ItemClickListener itemClickListener;
@@ -47,8 +55,28 @@ public class FoodVH extends RecyclerView.ViewHolder implements View.OnClickListe
     public void bindData(Food food, Context baseContext) {
         tvFoodName.setText(food.getName());
         tvCost.setText(food.getPrice());
-        //set supplier info
-        //..
         Picasso.with(baseContext).load(food.getImage()).into(imgFood);
+        //set supplier info
+        DatabaseReference supsRef= FirebaseDatabase.getInstance().getReference("Suppliers");
+        supsRef.child(food.getSupplierId()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                supplier=dataSnapshot.getValue(Supplier.class);
+                tvAddrStore.setText(supplier.getAddress());
+                tvStore.setText(supplier.getName());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+    }
+
+    public void bindQuickData() {
+
     }
 }

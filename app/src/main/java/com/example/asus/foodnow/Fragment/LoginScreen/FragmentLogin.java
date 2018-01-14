@@ -93,13 +93,10 @@ public class FragmentLogin extends Fragment {
         Intent intent=new Intent(getContext(), Home.class);
         DatabaseReference userRef=FirebaseDatabase.getInstance().getReference("Users");
         //select current user with uid in user table
-        userRef.addValueEventListener(new ValueEventListener() {
-
+        userRef.child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user=dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
-                //save current user instance
-                Common.currUser=user;
+                Common.currUser=dataSnapshot.getValue(User.class);
             }
 
             @Override
@@ -122,11 +119,11 @@ public class FragmentLogin extends Fragment {
                 progressDialog.show();
                if (strEmail.length()>0 && strPass.length()>0)
                {
-                   progressDialog.dismiss();
                    firebaseAuth.signInWithEmailAndPassword(strEmail,strPass)
                            .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                                @Override
                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                   progressDialog.dismiss();
                                    if (task.isSuccessful()){
                                        Toast.makeText(getContext(),"Ăn ngay thôi...",Toast.LENGTH_LONG).show();
                                        FirebaseUser user =firebaseAuth.getCurrentUser();
@@ -138,6 +135,7 @@ public class FragmentLogin extends Fragment {
                            });
                }else{
                    Toast.makeText(getContext(),"Vui lòng điền đầy đủ thông tin.",Toast.LENGTH_LONG).show();
+                   progressDialog.dismiss();
                }
 
             }

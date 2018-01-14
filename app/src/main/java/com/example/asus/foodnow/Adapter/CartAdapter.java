@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.example.asus.foodnow.Activity.Cart;
 import com.example.asus.foodnow.Interface.ItemClickListener;
 import com.example.asus.foodnow.Model.Order;
 import com.example.asus.foodnow.R;

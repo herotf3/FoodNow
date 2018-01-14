@@ -147,9 +147,9 @@
                     android:text="Mô tả......................."
                     android:textColor="@color/dark_layer_2"
                     android:textSize="14sp"
-
                     />
             </android.support.v7.widget.CardView>
+            <include layout="@layout/view_morefood"/>
 
 
         </LinearLayout>

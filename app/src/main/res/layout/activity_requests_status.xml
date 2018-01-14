@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asus.foodnow.Activity.RequestsStatus"
+    tools:context="com.example.asus.foodnow.Activity.OrderStatus"
     android:background="@drawable/background"
     android:backgroundTint="#c1000000"
     android:backgroundTintMode="screen">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rcl_listRequest"
+        android:id="@+id/rcl_listOrder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        
-        >
-
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_order">
     </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>

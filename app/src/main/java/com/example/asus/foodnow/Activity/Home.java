@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,11 +24,11 @@ import com.example.asus.foodnow.Interface.ItemClickListener;
 import com.example.asus.foodnow.Model.Category;
 import com.example.asus.foodnow.Model.Common;
 import com.example.asus.foodnow.R;
+import com.example.asus.foodnow.Services.ListenOrder;
 import com.example.asus.foodnow.ViewHolder.CategoryVH;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -98,6 +97,10 @@ public class Home extends AppCompatActivity
         recyclerMenu.setLayoutManager(layoutManager);
 
         loadMenu();
+
+        //register service
+        Intent service=new Intent(Home.this, ListenOrder.class);
+        startService(service);
     }
 
     @Override
@@ -126,7 +129,6 @@ public class Home extends AppCompatActivity
             public CategoryVH onCreateViewHolder(ViewGroup parent, int viewType) {
                 View itemView= LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.category_item,parent,false);
-
                 return new CategoryVH(itemView);
             }
 
@@ -183,12 +185,20 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
         switch (id){
             case R.id.nav_cart:
+                Intent cartIntent=new Intent(Home.this,Cart.class);
+                startActivity(cartIntent);
                 break;
             case R.id.nav_menu:
                 break;
             case R.id.nav_orders:
+                Intent orderIntent=new Intent(Home.this,OrderStatus.class);
+                startActivity(orderIntent);
                 break;
             case R.id.nav_signOut:
+                FirebaseAuth.getInstance().signOut();
+                Intent signIn=new Intent(Home.this,MainActivity.class);
+                signIn.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(signIn);
                 break;
         }
 

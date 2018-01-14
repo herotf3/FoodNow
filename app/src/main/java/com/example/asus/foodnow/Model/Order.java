@@ -7,6 +7,16 @@ package com.example.asus.foodnow.Model;
 public class Order {
     private String ProductId,ProductName, Quantity, Price, Discount;
 
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    private String supplierId;
+
     public Order(){}
 
     public String getProductId() {
@@ -56,4 +66,5 @@ public class Order {
         Price = price;
         Discount = discount;
     }
+
 }

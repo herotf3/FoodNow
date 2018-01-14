@@ -19,6 +19,7 @@ import com.example.asus.foodnow.Database.Database;
 import com.example.asus.foodnow.Model.Common;
 import com.example.asus.foodnow.Model.Order;
 import com.example.asus.foodnow.Model.Request;
+import com.example.asus.foodnow.Model.User;
 import com.example.asus.foodnow.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,6 +38,7 @@ public class Cart extends AppCompatActivity {
 
     FirebaseDatabase db;
     DatabaseReference requestRef;
+    User user;
 
     List<Order> orders =new ArrayList<>();
     CartAdapter adapter;
@@ -70,16 +72,31 @@ public class Cart extends AppCompatActivity {
 
                 builder.setView(edtAddress);
                 builder.setIcon(R.drawable.icon_home);
+                user=Common.currUser;
+                if (user==null)
+                    Toast.makeText(getBaseContext(),"Null",Toast.LENGTH_SHORT).show();
+                else
                 builder.setPositiveButton("Xong", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Request request=new Request(Common.currUser.getName(),
+                        Request request=new Request(user.getName(),
                                 edtAddress.getText().toString(),
-                                Common.currUser.getPhone(),tvTotal.getText().toString(),
+                                user.getPhone(),tvTotal.getText().toString(),
                                 orders);
                         //add to firebase
                         requestRef.child(String.valueOf(System.currentTimeMillis()))
                                 .setValue(request);
+                        //add to queue of each suppliers
+//                        DatabaseReference refQueue=db.getReference("SupplierQueue");
+//                        List<Order> temp=orders;
+//                        Request supRequest=request;
+//                        for (Order order:request.getFoods()){
+//                            String supId=order.getSupplierId();
+//                            //push an order to the queue of this supplier
+//                            DatabaseReference refOder=refQueue.child(supId).push();
+//                            refOder.setValue(order);
+//                        }
+
                         //delete cart in sql db
                         new Database(Cart.this).cleanCart();
                         Toast.makeText(getApplicationContext(),"Cảm ơn bạn đã đặt món <3",Toast.LENGTH_LONG).show();
@@ -116,5 +133,10 @@ public class Cart extends AppCompatActivity {
         Locale locale=new Locale("vi","VN");
         NumberFormat fmt=NumberFormat.getCurrencyInstance(locale);
         tvTotal.setText(fmt.format(total));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

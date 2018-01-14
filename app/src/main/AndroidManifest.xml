@@ -36,7 +36,9 @@
         <activity android:name=".Activity.ListFood" />
         <activity android:name=".Activity.FoodDetail" />
         <activity android:name=".Activity.Cart" />
-        <activity android:name=".Activity.RequestsStatus"></activity>
+        <activity android:name=".Activity.OrderStatus"/>
+        <service android:name=".Services.ListenOrder"/>
+
     </application>
 
 </manifest>

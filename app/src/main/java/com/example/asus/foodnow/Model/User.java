@@ -5,7 +5,11 @@ package com.example.asus.foodnow.Model;
  */
 
 public class User {
-    private String Name,Email,Phone;
+    private String Name,Email,Phone,isStaff;
+
+    public String getIsStaff() {
+        return isStaff;
+    }
 
     public String getName() {
         return Name;
@@ -32,7 +36,7 @@ public class User {
     }
 
     public User() {
-
+        isStaff="false";
     }
 
     public User(String name, String email, String phone) {
@@ -40,5 +44,6 @@ public class User {
         Name = name;
         Email = email;
         Phone = phone;
+        isStaff="false";
     }
 }

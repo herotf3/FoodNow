@@ -7,21 +7,127 @@
     android:layout_marginTop="3dp"
     android:background="#ffffff">
 
-    <TextView
-        android:text="Gọi thêm món nhé?"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:paddingLeft="5dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:textStyle="bold"
-        android:textColor="@color/color_text_orange"/>
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <ImageView
+            android:layout_width="@dimen/size_icon_message"
+            android:layout_height="@dimen/size_icon_message"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_info"
+            android:paddingTop="5dp"/>
+        <TextView
+            android:text="Thông tin nhà hàng/quán ăn:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:paddingTop="5dp"
+            android:textColor="#000"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e2000000"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/supplier_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/recipe_0_0"
+            android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/supplier_name"
+                android:text="Tên quán"
+                android:textColor="#afca02"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/supplier_address"
+                android:text="414 Dương Bá Trạc, phường 1, quận 8, Hồ Chí Minh"
+                android:textColor="@color/lighter_gray"
+                android:textSize="@dimen/text_size_address"
+                android:textStyle="italic"/>
+            <RatingBar
+                android:id="@+id/rate_bar"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="2.0"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_marginTop="2dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phí giao hàng (VNĐ/Km):"
+                    android:textColor="@color/lighter_gray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/supplier_shipCost"
+                    android:text="3000"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
+                <ImageView
+                    android:layout_width="@dimen/size_icon_message"
+                    android:layout_height="@dimen/size_icon_message"
+                    android:src="@drawable/ic_near_me_black_24dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/supplier_distance"
+                    android:textColor="@color/lighter_gray"
+                    android:text="3km"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Đang mở cửa"
+                    android:textColor="#00a7c4"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/list_morefood"
-        tools:listitem="@layout/item_a_food"
+        android:id="@+id/list_quickAdd"
+        tools:listitem="@layout/item_quick_add"
         >
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>
